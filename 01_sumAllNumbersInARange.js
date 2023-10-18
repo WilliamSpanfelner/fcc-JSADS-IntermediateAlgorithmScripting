@@ -15,8 +15,12 @@ function sumAll(arr) {
     .sort((a, b) =>
         a === b ? 0 : a > b ? 1 : -1
     );
-
-    return 1;
+    
+    let sum = 0;
+    for (let index = sortedArr[0]; index <= sortedArr[1]; index++) {
+        sum += index;
+    }
+    return sum;
 }
 
 const testData = [
