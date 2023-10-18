@@ -10,7 +10,22 @@ the numbers between 1 and 4 (both inclusive) is 10.
 */
 
 function sumAll(arr) {
+    const sortedArr = arr
+    .concat([])
+    .sort((a, b) =>
+        a === b ? 0 : a > b ? 1 : -1
+    );
+
     return 1;
-  }
-  
-  sumAll([1, 4]);
+}
+
+const testData = [
+    [1, 4],
+    [4, 1],
+    [5, 10],
+    [10, 5]
+];
+for (const item of testData) {
+    console.log(sumAll(item));
+}
+
