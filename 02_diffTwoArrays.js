@@ -8,6 +8,12 @@ Note: You can return the array with its elements in any order.
 */
 function diffArray(arr1, arr2) {
     const newArr = [];
+
+    console.log(arr1 == arr2);
+
+    const longArr = arr1.length >= arr2.length ? arr1.concat([]) : arr2.concat([]);
+    const shortArr = arr1.length >= arr2.length ? arr2.concat([]) : arr1.concat([]);
+
     return newArr;
 }
 
