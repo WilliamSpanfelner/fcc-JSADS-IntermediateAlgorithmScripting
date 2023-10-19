@@ -8,7 +8,7 @@ Note: You can return the array with its elements in any order.
 */
 function diffArray(arr1, arr2) {
     const newArr = [];
-    
+
     for (let c = 0; c < 2; c++) {  // iterate over each array
         for (let i = 0; i < arr1.length; i++) {
             const element = arr1[i];
@@ -16,7 +16,7 @@ function diffArray(arr1, arr2) {
                 newArr.push(element); // if an element isn't included add it to newArr
             }
         }
-        [arr1, arr2] = [arr2, arr1] // swap arrays
+        [arr1, arr2] = [arr2, arr1]; // swap arrays
     }
 
     return newArr;
