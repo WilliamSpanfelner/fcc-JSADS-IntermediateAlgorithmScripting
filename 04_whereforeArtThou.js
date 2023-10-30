@@ -15,36 +15,80 @@ third object from the array (the first argument), because
 it contains the name and its value, that was passed on as 
 the second argument.
 */
+
 function whatIsInAName(collection, source) {
-    // Get the objects from the source argument and then their values
-    const sourceEntries = Object.entries(source);
-    const sourceKey = sourceEntries[0][0]; // Object.keys(source);
-    const sourceValue = sourceEntries[0][1] // source[sourceKey];
+  const sourceSize = Object.keys(source).length;  // Interested in objects of this size.
+  let returnArray = [];
+  let temporaryObject = {};
 
-    // Test each element of the collection to find matches
-    const newArr = collection.map((element) =>
-    element.hasOwnProperty(sourceKey) && element[sourceKey] == sourceValue);
-    console.log(newArr);
+  for (let i = 0; i < collection.length; i++) {
+    const collObject = collection[i]; // an object in the collection
+    const collObjectLength = Object.keys(collObject).length;
 
-    // Create an array of results using a for loop
-    const newerArr = [];
-    for (let i = 0; i < collection.length; i++) {
-        const element = collection[i];
-        if (element.hasOwnProperty(sourceKey) && element[sourceKey] == sourceValue) {
-            newerArr.push(element);
+    if (collObjectLength >= sourceSize) {  // is the object size >= the source size?
+      for (const key in collObject) {  // get a key/value pair
+        if (Object.hasOwnProperty.call(collObject, key)) {
+          const collObjectValue = collObject[key];  // is the same key/value pair contained in source?
+          if (Object.hasOwnProperty.call(source, key)) {
+            const sourceValue = source[key];
+            if (sourceValue == collObjectValue) {
+              // add to temporary object
+              temporaryObject[key] = sourceValue;
+              /* is the number of key value pairs in the temp object equivalent 
+              to the number in the source object? */
+              if (Object.keys(temporaryObject).length == sourceSize) {
+                returnArray.push(collObject);
+                temporaryObject = {}; 
+              }
+            } else {
+              continue
+            }
+          }
         }
+      }
     }
-    console.log(newerArr);
-
-    // Create the same array as above with the filter method.
-    const newestArr = collection.filter((element) =>
-    element.hasOwnProperty(sourceKey) && element[sourceKey] == sourceValue);
-    console.log(newestArr);
-
-    return newestArr;
+  }
+  return returnArray
 }
 
-console.log(whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }));
+
+  
+// whatIsInAName([{ "c": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
+
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
+
+console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
+
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }));
+/*
+[
+  {
+    apple: 1,
+    bat: 2,
+  },
+  {
+    apple: 1,
+    bat: 2,
+    cookie: 2,
+  },
+]
+*/
+
+// console.log(whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }));
+/* 
+[
+  {
+    apple: 1,
+  },
+  {
+    apple: 1,
+  },
+  {
+    apple: 1,
+    bat: 2,
+  },
+]
+*/
 
 // console.log(whatIsInAName([
 //     { first: "Romeo", last: "Montague" },
@@ -52,3 +96,11 @@ console.log(whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 
 //     { first: "Tybalt", last: "Capulet" }], 
 //     { last: "Capulet" }
 //     ));
+/*
+[
+  {
+    first: "Tybalt",
+    last: "Capulet",
+  },
+]
+*/
