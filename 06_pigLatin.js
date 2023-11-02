@@ -15,12 +15,12 @@ guaranteed to be English words in all lowercase.
 
 function translatePigLatin(str) {
     const vowels = ['a', 'e', 'i', 'o', 'u'];
-    const testStr = 'b';
-    if (testStr in vowels) {
-        console.log("That's a vowel");
-    } else {
-        console.log("That's a consonant")
-    }    
+    // const testStr = 'b';
+    // if (testStr in vowels) {
+    //     console.log("That's a vowel");
+    // } else {
+    //     console.log("That's a consonant")
+    // }    
     
     const charArray = str.split('');
     let maxIndex;
@@ -34,7 +34,7 @@ function translatePigLatin(str) {
             break;
         } else {
             maxIndex = charArray.indexOf(element);
-            console.log(element, maxIndex, charArray);
+            // console.log(element, maxIndex, charArray);
         }
     }
 
@@ -43,11 +43,24 @@ function translatePigLatin(str) {
         const consonantChunk = charArray.slice(0, maxIndex + 1);
         const bodyChunk = charArray.slice(maxIndex + 1);
         const newWord = bodyChunk.concat(consonantChunk).join('') + 'ay';
-        return newWord;
         // console.log(consonantChunk, bodyChunk, newWord);
+        return newWord;
     } else {  // word must begin with a vowel
         return str + 'way'
     }
 }
 
-translatePigLatin("consonant");
+const testData = [
+    "rhythm",
+    "schwartz",
+    "consonant",
+    "california",
+    "paragraphs",
+    "glove",
+    "algorithmway",
+    "eight",
+]
+
+testData.forEach(element => {
+    console.log(translatePigLatin(element));
+});
