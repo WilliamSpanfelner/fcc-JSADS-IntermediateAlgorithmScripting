@@ -14,13 +14,10 @@ guaranteed to be English words in all lowercase.
 */
 
 function translatePigLatin(str) {
+    const regex = /^[aeiou]/;
+    const vowelPrefix = str.match(regex) ? str.concat('way') : str;
+    console.log(vowelPrefix);
     const vowels = ['a', 'e', 'i', 'o', 'u'];
-    // const testStr = 'b';
-    // if (testStr in vowels) {
-    //     console.log("That's a vowel");
-    // } else {
-    //     console.log("That's a consonant")
-    // }    
     
     const charArray = str.split('');
     let maxIndex;
@@ -46,7 +43,7 @@ function translatePigLatin(str) {
         // console.log(consonantChunk, bodyChunk, newWord);
         return newWord;
     } else {  // word must begin with a vowel
-        return str + 'way'
+        // return str + 'way'
     }
 }
 
