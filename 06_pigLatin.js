@@ -38,7 +38,16 @@ function translatePigLatin(str) {
         }
     }
 
-    return str
+    // Get the consonant prefix of the string if any
+    if (maxIndex != undefined) {
+        const consonantChunk = charArray.slice(0, maxIndex + 1);
+        const bodyChunk = charArray.slice(maxIndex + 1);
+        const newWord = bodyChunk.concat(consonantChunk).join('') + 'ay';
+        console.log(consonantChunk, bodyChunk, newWord);
+        return newWord;
+    } else {  // word must begin with a vowel
+        return str + 'way'
+    }
 }
 
 translatePigLatin("consonant");

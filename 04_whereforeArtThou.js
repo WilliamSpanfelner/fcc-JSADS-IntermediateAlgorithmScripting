@@ -22,13 +22,13 @@ function whatIsInAName(collection, source) {
   let temporaryObject = {};
 
   for (let i = 0; i < collection.length; i++) {
-    const collObject = collection[i]; // an object in the collection
-    const collObjectLength = Object.keys(collObject).length;
+    const collectionObject = collection[i]; // an object in the collection
+    const collectionObjectLength = Object.keys(collectionObject).length;
 
-    if (collObjectLength >= sourceSize) {  // is the object size >= the source size?
-      for (const key in collObject) {  // get a key/value pair
-        if (Object.hasOwnProperty.call(collObject, key)) {
-          const collObjectValue = collObject[key];  // is the same key/value pair contained in source?
+    if (collectionObjectLength >= sourceSize) {   // is the object size >= the source size?
+      for (const key in collectionObject) {  // get a key/value pair
+        if (Object.hasOwnProperty.call(collectionObject, key)) {
+          const collObjectValue = collectionObject[key];  // is the same key/value pair contained in source?
           if (Object.hasOwnProperty.call(source, key)) {
             const sourceValue = source[key];
             if (sourceValue == collObjectValue) {
@@ -37,7 +37,7 @@ function whatIsInAName(collection, source) {
               /* is the number of key value pairs in the temp object equivalent 
               to the number in the source object? */
               if (Object.keys(temporaryObject).length == sourceSize) {
-                returnArray.push(collObject);
+                returnArray.push(collectionObject);
                 temporaryObject = {}; 
               }
             } else {
