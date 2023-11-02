@@ -20,7 +20,11 @@ function translatePigLatin(str) {
         console.log("That's a vowel");
     } else {
         console.log("That's a consonant")
-    }
+    }    
+    
+    const charArray = str.split('');
+    let maxIndex;
+    
     return str
 }
 
