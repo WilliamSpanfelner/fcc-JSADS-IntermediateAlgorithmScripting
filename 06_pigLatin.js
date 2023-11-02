@@ -25,6 +25,19 @@ function translatePigLatin(str) {
     const charArray = str.split('');
     let maxIndex;
     
+    // iterate charArray until a vowel is found logging 
+    // the maxIndex of the last prefix consonant
+    for (let i = 0; i < charArray.length; i++) {
+        const element = charArray[i];
+        
+        if (vowels.includes(element)) {
+            break;
+        } else {
+            maxIndex = charArray.indexOf(element);
+            console.log(element, maxIndex, charArray);
+        }
+    }
+
     return str
 }
 
