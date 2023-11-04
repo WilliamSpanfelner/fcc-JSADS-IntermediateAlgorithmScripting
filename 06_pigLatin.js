@@ -34,9 +34,10 @@ function translatePigLatin(str) {
     const translation = str.match(regex) ? 
     str.concat('way') : 
     translateConsonantPrefix(str);
+    
+    return translation;
 
     // console.log(translation);
-
 
     // const vowels = ['a', 'e', 'i', 'o', 'u'];
     
@@ -68,8 +69,6 @@ function translatePigLatin(str) {
     // else {  // word must begin with a vowel
         // return str + 'way'
     // }
-
-    return translation;
 }
 
 const testData = [
