@@ -16,7 +16,25 @@ word Book with the word dog, it should be replaced as Dog
 */
 
 function myReplace(str, before, after) {
-    return str;
+    let strAsArray = str.split(' ');
+    
+    if (before[0].toLowerCase() === before[0]) {
+        if (after[0].toLowerCase() !== after[0]) {
+            let afterChars = after.split('');
+            afterChars[0] = afterChars[0].toLowerCase();
+            const afterLower = afterChars.join('');
+            strAsArray[strAsArray.indexOf(before)] = afterLower;
+        } else {
+            strAsArray[strAsArray.indexOf(before)] = after;
+        } 
+    } else {
+        let afterChars = after.split('');
+        afterChars[0] = afterChars[0].toUpperCase();
+        const afterUpper = afterChars.join('');
+        strAsArray[strAsArray.indexOf(before)] = afterUpper;
+    }
+    return strAsArray.join(' ');
 }
-
-myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+// console.log(myReplace("Let us go to the store", "store", "mall"));
+// console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));
+console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
