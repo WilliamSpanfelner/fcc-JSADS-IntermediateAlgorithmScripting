@@ -16,25 +16,25 @@ word Book with the word dog, it should be replaced as Dog
 */
 
 function myReplace(str, before, after) {
-    let strAsArray = str.split(' ');
-    
+    const strAsArray = str.split(' ');
+    const afterChars = after.split('');
+    const word = strAsArray.indexOf(before);
     if (before[0].toLowerCase() === before[0]) {
         if (after[0].toLowerCase() !== after[0]) {
-            let afterChars = after.split('');
             afterChars[0] = afterChars[0].toLowerCase();
             const afterLower = afterChars.join('');
-            strAsArray[strAsArray.indexOf(before)] = afterLower;
+            strAsArray[word] = afterLower;
         } else {
-            strAsArray[strAsArray.indexOf(before)] = after;
+            strAsArray[word] = after;
         } 
     } else {
-        let afterChars = after.split('');
         afterChars[0] = afterChars[0].toUpperCase();
         const afterUpper = afterChars.join('');
-        strAsArray[strAsArray.indexOf(before)] = afterUpper;
+        strAsArray[word] = afterUpper;
     }
     return strAsArray.join(' ');
 }
-// console.log(myReplace("Let us go to the store", "store", "mall"));
+// console.log(myReplace("I think we should look up there", "up", "Down"));
+console.log(myReplace("Let us go to the store", "store", "mall"));
 // console.log(myReplace("This has a spellngi error", "spellngi", "spelling"));
-console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+// console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
