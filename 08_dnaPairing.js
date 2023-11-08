@@ -17,9 +17,13 @@ arrays are grouped into one encapsulating array.
 */
 function pairElement(str) {
     let dnaPairs = [];
+    const unpairedElements = str.split('');
     
+
     return dnaPairs;
 }
 
+console.log(pairElement("CTCTA"));
+// console.log(pairElement("TTGAG"));
 // console.log(pairElement("ATCGA"));
-console.log(pairElement("GCG"));
+// console.log(pairElement("GCG"));
