@@ -19,6 +19,19 @@ function pairElement(str) {
     let dnaPairs = [];
     const unpairedElements = str.split('');
     
+    unpairedElements.forEach(element => {
+        let pairedElement;
+        if (element == "G") {
+            pairedElement = [element, "C"];
+        } else if (element == "C") {
+            pairedElement  = [element, "G"];
+        } else if (element == "A") {
+            pairedElement  = [element, "T"];
+        } else if (element == "T") {
+            pairedElement  = [element, "A"];
+        }
+        dnaPairs.push(pairedElement);
+    });
 
     return dnaPairs;
 }
