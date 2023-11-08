@@ -16,7 +16,10 @@ The character and its pair are paired up in an array, and all the
 arrays are grouped into one encapsulating array.
 */
 function pairElement(str) {
-    return str;
+    let dnaPairs = [];
+    
+    return dnaPairs;
 }
 
-pairElement("GCG");
+// console.log(pairElement("ATCGA"));
+console.log(pairElement("GCG"));
