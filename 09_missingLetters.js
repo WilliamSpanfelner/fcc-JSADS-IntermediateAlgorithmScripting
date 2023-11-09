@@ -17,6 +17,10 @@ function fearNotLetter(str) {
     // console.log(str.length);
     console.log(str.charCodeAt(0), str.charCodeAt(str.length - 1));
 
+    // Compute actual length of range  
+    const actualRangeLength = endRange - startRange + 1
+    console.log(actualRangeLength);
+
     return str;
 }
 
