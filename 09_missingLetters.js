@@ -28,8 +28,10 @@ function fearNotLetter(str) {
         Array.from({ length: end - start + 1 }, 
             (value, index) => String.fromCharCode(start + index)
             );
-            
-    return str;
+    
+    const contiguousChars = actualRange(startRange, endRange, 1);
+
+    return str;    
 }
 
 testData = [
