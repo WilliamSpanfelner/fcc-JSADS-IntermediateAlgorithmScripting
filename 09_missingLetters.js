@@ -21,7 +21,7 @@ function fearNotLetter(str) {
     const actualRangeLength = endRange - startRange + 1
     console.log(actualRangeLength);
 
-    // Create an array with individual range elements
+    // Create an actualRange function to return array of individual range elements
     /* Check out this great article:
     https://www.freecodecamp.org/news/javascript-range-create-an-array-of-numbers-with-the-from-method/ */
     const actualRange = (start, end) =>
@@ -29,7 +29,12 @@ function fearNotLetter(str) {
             (value, index) => String.fromCharCode(start + index)
             );
     
-    const contiguousChars = actualRange(startRange, endRange, 1);
+    // call the actualRange function with relevant data
+    const contiguousChars = actualRange(startRange, endRange);
+
+    // Create array of characters from input str
+    const rangeInStr = str.split('');
+    console.log(rangeInStr);
 
     return str;    
 }
