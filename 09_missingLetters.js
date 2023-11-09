@@ -36,7 +36,15 @@ function fearNotLetter(str) {
     const rangeInStr = str.split('');
     console.log(rangeInStr);
 
-    return str;    
+    let missingLetter;
+
+    for (let index = 0; index < contiguousChars.length; index++) {
+        const element = contiguousChars[index];
+        if (rangeInStr.includes(element) == false) {
+            missingLetter = element;
+        };
+    }
+    return missingLetter;
 }
 
 testData = [
