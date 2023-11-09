@@ -21,6 +21,15 @@ function fearNotLetter(str) {
     const actualRangeLength = endRange - startRange + 1
     console.log(actualRangeLength);
 
+    // Create an array with individual range elements 
+    /* Check out this great article:
+    https://www.freecodecamp.org/news/javascript-range-create-an-array-of-numbers-with-the-from-method/ */
+    const actualRange = (start, end, step) =>
+        Array.from({ length: end - start + 1 }, 
+            (value, index) => start + index * step
+            );
+    console.log(actualRange(startRange, endRange, 1));
+
     return str;
 }
 
