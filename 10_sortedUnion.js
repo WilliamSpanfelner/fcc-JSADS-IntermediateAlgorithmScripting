@@ -23,6 +23,9 @@ function uniteUnique(...arr) {
     // Concatenate arrTail to the initial array element to get a single
     // contiguous array
     const newArr = arr[0].concat(...arrTail);
+    
+    // Create a set from newArr to preserve order and uniquiness of all elements
+    const uniqueElements = new Set(newArr);
 
     return arr;
 }
