@@ -16,8 +16,11 @@ numerical order.
 Check the assertion tests for examples.
 */
 
-function uniteUnique(arr) {
+function uniteUnique(...arr) {
+    // Create a new array of all of input elements except the first
+    const arrTail = arr.slice(1);
+
     return arr;
 }
 
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
