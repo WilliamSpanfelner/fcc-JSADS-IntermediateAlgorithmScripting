@@ -20,7 +20,8 @@ function uniteUnique(...arr) {
     // Create a new array of all of input elements except the first
     const arrTail = arr.slice(1);
 
-    // Concatenate arrTail to the initial array element
+    // Concatenate arrTail to the initial array element to get a single
+    // contiguous array
     const newArr = arr[0].concat(...arrTail);
 
     return arr;
