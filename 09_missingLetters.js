@@ -11,15 +11,6 @@ function fearNotLetter(str) {
     // Get the UTF-16 code for starting and ending chars
     const startRange = str.charCodeAt(0);
     const endRange = str.charCodeAt(str.length - 1);
-    // console.log(startRange.charCodeAt(0));
-    // console.log(endRange.charCodeAt(0));
-    // console.log(endRange.charCodeAt(0) - startRange.charCodeAt(0) + 1);
-    // console.log(str.length);
-    console.log(str.charCodeAt(0), str.charCodeAt(str.length - 1));
-
-    // Compute actual length of range  
-    const actualRangeLength = endRange - startRange + 1
-    console.log(actualRangeLength);
 
     // Create an actualRange function to return array of individual range elements
     /* Check out this great article:
@@ -34,10 +25,8 @@ function fearNotLetter(str) {
 
     // Create array of characters from input str
     const rangeInStr = str.split('');
-    console.log(rangeInStr);
 
     let missingLetter;
-
     for (let index = 0; index < contiguousChars.length; index++) {
         const element = contiguousChars[index];
         if (rangeInStr.includes(element) == false) {
