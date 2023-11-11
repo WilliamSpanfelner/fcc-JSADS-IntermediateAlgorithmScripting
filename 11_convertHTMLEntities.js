@@ -7,8 +7,17 @@ HTML entities.
 */
 
 function convertHTML(str) {
+    const htmlEntities = {
+      '"': '&quot;',
+      '&': '&amp;',
+      "'": '&apos;',
+      '<': '&lt;',
+      '>': '&gt;'
+    };
+
     return str;
 }
 
-convertHTML("Dolce & Gabbana");
+console.log(convertHTML("Hamburgers < Pizza < Tacos"));
+// console.log(convertHTML("Dolce & Gabbana"));
 
