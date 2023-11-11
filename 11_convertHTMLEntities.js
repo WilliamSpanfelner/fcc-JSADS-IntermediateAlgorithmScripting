@@ -25,6 +25,18 @@ function convertHTML(str) {
     return newStr;
 }
 
-console.log(convertHTML("Hamburgers < Pizza < Tacos"));
-// console.log(convertHTML("Dolce & Gabbana"));
+const testData = [
+    "Hamburgers < Pizza < Tacos",
+    "Dolce & Gabbana",
+    "Sixty > twelve",
+    'Stuff in "quotation marks"',
+    "Schindler's List",
+    "<>",
+    "abc"
+];
+
+testData.forEach(element => {
+    console.log(convertHTML(element));
+});
+
 
