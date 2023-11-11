@@ -20,8 +20,9 @@ function convertHTML(str) {
         htmlEntities.hasOwnProperty(element) ? newArray.push(htmlEntities[element]) : newArray.push(element);
         return newArray;
     }, [])
+    .join('');
 
-    return str;
+    return newStr;
 }
 
 console.log(convertHTML("Hamburgers < Pizza < Tacos"));
