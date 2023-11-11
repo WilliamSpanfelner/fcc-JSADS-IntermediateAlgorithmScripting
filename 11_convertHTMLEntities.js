@@ -16,6 +16,10 @@ function convertHTML(str) {
     };
 
     const newStr = str.split('')
+    .reduce((newArray, element) => {
+        htmlEntities.hasOwnProperty(element) ? newArray.push(htmlEntities[element]) : newArray.push(element);
+        return newArray;
+    }, [])
 
     return str;
 }
