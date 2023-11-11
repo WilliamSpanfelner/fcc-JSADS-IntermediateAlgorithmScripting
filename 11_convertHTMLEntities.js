@@ -15,6 +15,8 @@ function convertHTML(str) {
       '>': '&gt;'
     };
 
+    const newStr = str.split('')
+
     return str;
 }
 
