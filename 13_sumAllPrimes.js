@@ -12,6 +12,8 @@ numbers that are less than or equal to num.
 */
 
 function sumPrimes(num) {
+    // Create array of prime numbers <= num
+    // Sum the primes
     return num;
 }
 
