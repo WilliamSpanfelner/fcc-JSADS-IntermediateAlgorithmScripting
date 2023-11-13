@@ -16,6 +16,9 @@ odd Fibonacci numbers less than or equal to 10 are 1,
 */
 
 function sumFibs(num) {
+    // first create a Fibonacci sequence to the num value
+    // filter the odd values
+    // return the sum of odd values
     return num;
 }
 
