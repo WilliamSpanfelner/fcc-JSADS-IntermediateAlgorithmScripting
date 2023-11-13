@@ -17,9 +17,28 @@ odd Fibonacci numbers less than or equal to 10 are 1,
 
 function sumFibs(num) {
     // first create a Fibonacci sequence to the num value
+    let fibSeq = [0, 1];
+    for (let i = 0; i < num + 1; i++) {
+        const element = fibSeq[i] + fibSeq[i + 1];
+        if (element > num) {
+            break;
+        } else {
+            fibSeq.push(element);
+        } 
+    }
+    // let i = 0
+    // while (fibSeq[fibSeq.length - 1] <= num) {
+    //     const element = fibSeq[i] + fibSeq[i + 1];
+    //     fibSeq.push(element);
+    //     i++;
+    // } 
+
+    console.log(num, fibSeq);
+
     // filter the odd values
+
     // return the sum of odd values
     return num;
 }
 
-sumFibs(4);
+console.log(sumFibs(4));
