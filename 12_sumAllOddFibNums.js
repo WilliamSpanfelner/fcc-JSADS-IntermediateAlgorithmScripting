@@ -38,9 +38,12 @@ function sumFibs(num) {
     // filter the odd values
     const oddFibs = fibSeq.filter(element => element % 2 != 0);
     console.log(oddFibs);
-    
+
     // return the sum of odd values
-    return num;
+    return oddFibs.reduce((sum, element) => {
+        sum += element
+        return sum;
+    }, 0);
 }
 
 console.log(sumFibs(4));
