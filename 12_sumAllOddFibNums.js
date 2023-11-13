@@ -40,10 +40,7 @@ function sumFibs(num) {
     console.log(oddFibs);
 
     // return the sum of odd values
-    return oddFibs.reduce((sum, element) => {
-        sum += element
-        return sum;
-    }, 0);
+    return oddFibs.reduce((sum, element) => sum += element, 0);
 }
 
 console.log(sumFibs(4));
