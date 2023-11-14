@@ -15,6 +15,17 @@ function sumPrimes(num) {
     // Create array of prime numbers <= num
     const primes = [1, 2];
 
+    function isPrime(value) {
+
+    }
+
+    for (let i = 2; i < num + 1; i++) {
+        // if i is a prime and it's not already in the primes array push i in
+        if (isPrime(i) && (primes.includes(i) == false)) {
+            primes.push(i);
+        }
+    }
+
     console.log(primes);
     // Sum the primes
     return num;
