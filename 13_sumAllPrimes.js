@@ -13,6 +13,9 @@ numbers that are less than or equal to num.
 
 function sumPrimes(num) {
     // Create array of prime numbers <= num
+    const primes = [1, 2];
+
+    console.log(primes);
     // Sum the primes
     return num;
 }
