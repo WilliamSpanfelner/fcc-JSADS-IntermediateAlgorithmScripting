@@ -13,13 +13,13 @@ numbers that are less than or equal to num.
 
 function sumPrimes(num) {
     // Create array of prime numbers <= num
-    const primes = [1, 2];
+    const primes = [2];
 
     function isPrime(value) {
-        for (let i = 2; i < value + 1; i++) {
-            /* if value does not equal i (e.g. itself) AND 
-            value is evenly divisible by i then it cannot be prime*/
-            if (value != i && (value % i == 0)) {
+        for (let i = 2; i < value; i++) {
+            /* since value cannot equal i (e.g. itself) by this for...loop definition,
+            if value is evenly divisible by i then it cannot be prime*/
+            if (value % i == 0) {
                 return false;
             }
         }
@@ -35,7 +35,12 @@ function sumPrimes(num) {
 
     console.log(primes);
     // Sum the primes
-    return num;
+    return primes.reduce((sum, element) => sum += element, 0);
 }
 
-sumPrimes(10);
+const testData = [10, 977];
+testData.forEach(element => {
+    console.log(sumPrimes(element));
+});
+
+// 17 73156
