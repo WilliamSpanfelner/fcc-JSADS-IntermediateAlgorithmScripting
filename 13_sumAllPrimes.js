@@ -16,7 +16,14 @@ function sumPrimes(num) {
     const primes = [1, 2];
 
     function isPrime(value) {
-
+        for (let i = 2; i < value + 1; i++) {
+            /* if value does not equal i (e.g. itself) AND 
+            value is evenly divisible by i then it cannot be prime*/
+            if (value != i && (value % i == 0)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     for (let i = 2; i < num + 1; i++) {
