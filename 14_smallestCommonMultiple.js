@@ -16,6 +16,10 @@ here would be 6.
 */
 
 function smallestCommons(arr) {
+    // Determine min and max values of arr
+    const min_arr_Value = Math.min(...arr);
+    const max_arr_Value = Math.max(...arr);
+    console.log(min_arr_Value, max_arr_Value);
     return arr;
 }
 
