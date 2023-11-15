@@ -20,9 +20,17 @@ function smallestCommons(arr) {
     const min_arr_Value = Math.min(...arr);
     const max_arr_Value = Math.max(...arr);
     console.log(min_arr_Value, max_arr_Value);
+
+    // create range of values between min and max
+    const rangeValues = [];
+    for (let index = min_arr_Value; index < max_arr_Value + 1; index++) {
+        rangeValues.push(index);
+    }
+    console.log(rangeValues);
+
+
     return arr;
 }
 
 smallestCommons([1,5]);
-
 
