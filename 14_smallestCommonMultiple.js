@@ -16,10 +16,20 @@ here would be 6.
 */
 
 function smallestCommons(arr) {
+    /**
+     * Compare elements for equality
+     * @param {*} arr 
+     * @returns bool
+     */
+        function allElementsEqual(arr) {
+            const element0 = arr[0]
+            return arr.reduce((result, element) => element == element0, false);
+        }
+
+
     // Determine min and max values of arr
     const min_arr_Value = Math.min(...arr);
     const max_arr_Value = Math.max(...arr);
-    console.log(min_arr_Value, max_arr_Value);
 
     // create range of values between min and max
     const rangeValues = [];
@@ -28,8 +38,16 @@ function smallestCommons(arr) {
     }
     console.log(rangeValues);
 
+    // Multiply first element by 2 and see if all elements are equivalent
+    let converging = rangeValues.concat([]).filter(element => element > 1);
+    converging[0] *= 2
+    console.log(converging);
 
-    return arr;
+    // Are all elements equivalent now?
+    // if (allElementsEqual(converging)) {
+        console.log(allElementsEqual(converging));
+    // }
+    return arr  // leastCommonMultiple;
 }
 
 smallestCommons([1,5]);
