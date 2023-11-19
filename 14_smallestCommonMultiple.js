@@ -50,6 +50,37 @@ function smallestCommons(arr) {
     let primeIndex = 0;
     let foundFactor = false;
 
+    while (elementsNotOne(converging)) {
+        // Iterate through entire converging array dividing by small primes
+        for (const index in converging) {
+            /* Check if a prime evenly divides into an element and if so,
+            mutate the array with the division and flag */
+            if (converging[index] % primes[primeIndex] === 0 && converging[index] != 1) {
+                // flag that an element was evenly divisible
+                foundFactor = true;
+                // perform division and store it in converging
+                converging[index] /= primes[primeIndex]; 
+                // console.log(converging);
+            }
+        }    
+        
+        /* If a pass through the entire array completes without finding a 
+        divisible element and elements of converging are not all equal to 1, 
+        increase the primeIndex  */
+        if (!foundFactor) {
+            primeIndex++;
+            // console.log("primeIndex increased to: ", primeIndex );
+        }
+        // Push prime to the lcm array
+        if (foundFactor == true) {
+            lcmFactors.push(primes[primeIndex]);
+            // reset flag
+            foundFactor = false;
+        }
+    }
+    
+    return lcmFactors.reduce((prod, element) => prod *= element, 1);  // leastCommonMultiple;
+
     return arr;
 }
 
