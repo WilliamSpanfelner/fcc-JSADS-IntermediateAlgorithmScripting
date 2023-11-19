@@ -15,8 +15,13 @@ function dropElements(arr, func) {
     for (let i = 0; i < arr.length; i++) {
         const element = arr[i];
 
+        // Return the arr contents from the first element that returns true
+        if (func(element)) {
+            return arr.slice(i);
+        }
     }
     
-    return arr;
+    // Otherwise return an empty array
+    return [];
 }
 console.log(dropElements([1, 2, 3], function(n) {return n < 3; }));          // [1, 2, 3] [1, 2]
