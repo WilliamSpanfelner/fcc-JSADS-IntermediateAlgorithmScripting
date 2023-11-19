@@ -12,6 +12,11 @@ an empty array.
 */
 
 function dropElements(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+
+    }
+    
     return arr;
 }
 console.log(dropElements([1, 2, 3], function(n) {return n < 3; }));          // [1, 2, 3] [1, 2]
