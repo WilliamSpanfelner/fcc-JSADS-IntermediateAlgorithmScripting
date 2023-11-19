@@ -13,8 +13,13 @@ numbers that are less than or equal to num.
 
 function sumPrimes(num) {
     // Create array of prime numbers <= num
-    const primes = [2];
-
+    const primes = [];
+    /**
+     * Iterate through values 2 to value to find an integer
+     * that divides evenly other than 1 and itself
+     * @param {*} value 
+     * @returns a boolean
+     */
     function isPrime(value) {
         for (let i = 2; i < value; i++) {
             /* since value cannot equal i (e.g. itself) by this for...loop definition,
@@ -28,7 +33,7 @@ function sumPrimes(num) {
 
     for (let i = 2; i < num + 1; i++) {
         // if i is a prime and it's not already in the primes array push i in
-        if (isPrime(i) && (primes.includes(i) == false)) {
+        if (isPrime(i) && (!primes.includes(i))) {
             primes.push(i);
         }
     }
