@@ -6,6 +6,7 @@ You must account for varying levels of nesting.
 */ 
 
 function steamrollArray(arr) {
+    let flattenedArr = [];
     // Get the lengths of all elements in arr
     const arrDepths = arr.reduce((depth, element) => {
         depth.push(element.length);
@@ -17,6 +18,12 @@ function steamrollArray(arr) {
     //         depth = i.length;
     //     }    
     // }
+
+    // Determine if an element is an a array or not.
+    console.log(Array.isArray(arr[0]));
+
+    console.log(flattenedArr);
+
     return arr;
     // Solution using flatMap and flat not permitted
 
