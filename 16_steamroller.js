@@ -6,25 +6,10 @@ You must account for varying levels of nesting.
 */ 
 
 function steamrollArray(arr) {
-    let flattenedArr = [];
-    // Get the lengths of all elements in arr
-    const arrDepths = arr.reduce((depth, element) => {
-        depth.push(element.length);
-        return depth;
-    }, []);
-    console.log(arrDepths);  // [undefined, undefined, 2]
-    // for (const i of arr) {
-    //     if (i.length > depth) {
-    //         depth = i.length;
-    //     }    
-    // }
-
-    // Determine if an element is an a array or not.
-    console.log(Array.isArray(arr[0]));
-
-    console.log(flattenedArr);
-
-    return arr;
+    // Copy orignial array to new array expanding one level deep
+    let flattenedArr = Array.prototype.concat(...arr);
+    // Determine if any elements in flattenedArr is an a array or not.
+    return flattenedArr.some(Array.isArray) ? steamrollArray(flattenedArr) : flattenedArr;
     // Solution using flatMap and flat not permitted
 
     // find the greatest depth of nesting
