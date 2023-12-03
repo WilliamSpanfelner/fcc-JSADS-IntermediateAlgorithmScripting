@@ -15,8 +15,7 @@ function binaryAgent(str) {
     // 4. join the characters to form string for output;
 
     return str.split(' ')
-    .map(element => parseInt(element, 2))
-    .map(element => String.fromCharCode(element))
+    .map(element => String.fromCharCode(parseInt(element, 2)))
     .join('');
 }
   
