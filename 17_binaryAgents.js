@@ -8,6 +8,17 @@ The binary string will be space separated.
 */
 
 function binaryAgent(str) {
+    // Plan of attack:
+    // 1. convert string to array;
+    // 2. convert binary elements to decimal;
+    // 3. convert decimal elements to unicode characters;
+    // 4. join the characters to form string for output;
+
+    const binary = str.split(' ');
+    console.log(binary);
+
+    console.log(parseInt(binary[0], 2));
+
     return str;
 }
   
