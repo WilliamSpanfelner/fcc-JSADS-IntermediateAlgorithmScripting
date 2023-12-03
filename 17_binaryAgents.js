@@ -17,7 +17,8 @@ function binaryAgent(str) {
     const binary = str.split(' ');
     console.log(binary);
 
-    console.log(parseInt(binary[0], 2));
+    const decimal = binary.map(element => parseInt(element, 2))
+    console.log(decimal);
 
     return str;
 }
