@@ -18,9 +18,9 @@ either dot notation or [] notation.
 
 function truthCheck(collection, pre) {
     // map the boolean values of each element
-    const isTruthy = collection.map(element => Boolean(element[pre]));
     // then test for false in the list of results
-    return isTruthy.includes(false) ? false : true;
+    return !collection.map(element => Boolean(element[pre]))
+    .includes(false);
 }
 
 console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot"));
