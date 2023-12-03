@@ -17,8 +17,11 @@ function binaryAgent(str) {
     const binary = str.split(' ');
     console.log(binary);
 
-    const decimal = binary.map(element => parseInt(element, 2))
+    const decimal = binary.map(element => parseInt(element, 2));
     console.log(decimal);
+
+    const chars = decimal.map(element => String.fromCharCode(element));
+    console.log(chars);
 
     return str;
 }
