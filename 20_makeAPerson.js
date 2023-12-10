@@ -42,6 +42,10 @@ const Person = function (first, last) {
     this.setLastName = function (last) {
         return lname = last;
     }
-
-    return "";
+    // Set the value for fullname using the other two functions
+    this.setFullName = function (first, last) {
+        this.setFirstName(first);
+        this.setLastName(last);
+        return this.getFullName();
+    };
 };
