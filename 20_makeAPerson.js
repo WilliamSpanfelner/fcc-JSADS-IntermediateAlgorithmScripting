@@ -18,6 +18,10 @@ Person instance as new Person('Bob', 'Ross').
 */
 
 const Person = function (first, last) {
+    // Create storage for first and last parameters
+    let fname = first;
+    let lname = last;
+
     this.getFullName = function () {
         return "";
     };
