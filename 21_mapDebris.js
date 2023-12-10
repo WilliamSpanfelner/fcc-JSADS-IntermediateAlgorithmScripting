@@ -27,7 +27,12 @@ value of earth is 398600.4418 km^3 * s^(-2).
 function orbitalPeriod(arr) {
     const GM = 398600.4418;
     const earthRadius = 6367.4447;
-    return arr;
+    // Calculate the orbit's semi-major axis 'a'
+    const a = arr[0].avgAlt + earthRadius;
+    // Calculate the orbital period T
+    const T = 2 * Math.PI * Math.sqrt(Math.pow(a, 3) / GM);
+    // return an array with the appropriate data formatted
+    return [{name: arr[0].name, orbitalPeriod: Number(T.toFixed())}];
   }
   
-  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+  console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
