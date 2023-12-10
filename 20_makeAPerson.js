@@ -38,6 +38,10 @@ const Person = function (first, last) {
     this.setFirstName = function (first) {
         return fname = first;
     }
+    // Set the value for lname
+    this.setLastName = function (last) {
+        return lname = last;
+    }
 
     return "";
 };
