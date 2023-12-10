@@ -25,5 +25,10 @@ const Person = function (first, last) {
     this.getFullName = function () {
         return "";
     };
+    // Get the value in fname
+    this.getFirstName = function() {
+        return fname;
+    }
+
     return "";
 };
