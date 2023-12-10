@@ -49,3 +49,8 @@ const Person = function (first, last) {
         return this.getFullName();
     };
 };
+
+let p = new Person("Haskell", "Curry");
+console.log(p.getFullName());
+console.log(p.getFirstName());
+console.log(p.getLastName());
