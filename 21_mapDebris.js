@@ -28,11 +28,22 @@ function orbitalPeriod(arr) {
     const GM = 398600.4418;
     const earthRadius = 6367.4447;
     // Calculate the orbit's semi-major axis 'a'
-    const a = arr[0].avgAlt + earthRadius;
+    // const a = arr[0].avgAlt + earthRadius;
+
     // Calculate the orbital period T
-    const T = 2 * Math.PI * Math.sqrt(Math.pow(a, 3) / GM);
+    // const T = 2 * Math.PI * Math.sqrt(Math.pow(a, 3) / GM);
+
     // return an array with the appropriate data formatted
-    return [{name: arr[0].name, orbitalPeriod: Number(T.toFixed())}];
+    // return [{name: arr[0].name, orbitalPeriod: Number(T.toFixed())}];
+
+    return arr.reduce((acc, element) => {
+        const a = element.avgAlt + earthRadius;
+        const T = 2 * Math.PI * Math.sqrt(Math.pow(a, 3) / GM);
+        acc.push({name: element.name, orbitalPeriod: Number(T.toFixed())});
+        return acc;
+    }, []);
   }
   
-  console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
+  console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]
+));
+//   console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
